@@ -1,0 +1,320 @@
+{
+    "data":[
+
+   
+        {
+
+            "id" :"1",
+            "code":"Ab001",
+            "name":"Bambo watch",
+            "description":"Product Description",
+            "price":99,
+            "category":"Accessories",
+            "quantity":25,
+            "inventoryStatus":"InStock",
+            "rating":4
+      
+          },
+          {
+      
+            "id" :"2",
+            "code":"Bc001",
+            "name":"Black watch",
+            "description":"Product Description",
+            "price":489,
+            "category":"Accessories",
+            "quantity":2,
+            "inventoryStatus":"InStock",
+            "rating":5
+      
+          },
+      
+          {
+      
+            "id" :"3",
+            "code":"BD1001",
+            "name":"Blue Band",
+            "description":"Product Description",
+            "price":859,
+            "category":"Accessories",
+            "quantity":68,
+            "inventoryStatus":"InStock",
+            "rating":3
+      
+          },
+
+          {
+			"id": "4",
+			"code": "h456wer53",
+			"name": "Bracelet",
+			"description": "Product Description",
+			"image": "bracelet.jpg",
+			"price": 15,
+			"category": "Accessories",
+			"quantity": 73,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4
+		},
+		{
+			"id": "5",
+			"code": "av2231fwg",
+			"name": "Brown Purse",
+			"description": "Product Description",
+			"price": 120,
+			"category": "Accessories",
+			"quantity": 0,
+			"inventoryStatus": "OUTOFSTOCK",
+			"rating": 4
+		},
+		{
+			"id": "6",
+			"code": "bib36pfvm",
+			"name": "Chakra Bracelet",
+			"description": "Product Description",
+			"price": 32,
+			"category": "Accessories",
+			"quantity": 5,
+			"inventoryStatus": "LOWSTOCK",
+			"rating": 3
+		},
+		{
+			"id": "7",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "8",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		}
+
+		,
+		{
+			"id": "9",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		}
+		,
+		{
+			"id": "10",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "11",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "12",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "101",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "107",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "114",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "121",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "343",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "87",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "88",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "77",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "66",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "252",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "667",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "99",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "888",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "334",
+			"code": "mbvjkgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "025",
+			"code": "mbvjkytryrtgip5",
+			"name": "Galaxy Earrings",
+			"description": " Description",
+			"price": 34,
+			"category": "Home",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		}
+
+
+
+
+
+    ]
+}
