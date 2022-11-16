@@ -1,0 +1,20 @@
+{
+    "global":{
+    
+        "name": "Full Name :",
+        "Address":"Address Detail :",
+        "DepartmentName":"Department Detail :",
+        "btnDelete": "Delete"
+    },
+
+    "resize": {
+        
+        "Id": "Sr.No",
+        "Code":" Product Code",
+        "Name": "Product Name",
+        "Category":"Product Category",
+        "Quantity":" Product Quantity"
+
+    }
+   
+}

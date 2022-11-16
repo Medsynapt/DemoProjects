@@ -1,0 +1,122 @@
+<div class="child">
+    <h1>Child Component</h1>
+    <hr> Value from Parent using @Input :<strong> {{ myInputVal }}</strong>  
+</div>
+
+
+
+<!-- 
+
+>import { Component, OnInit } from '@angular/core';
+>import { EmpserviceService } from '../empservice.service';
+>import { EmployeeDTO } from './empinterface';
+>@Component({
+>  selector: 'app-employee',
+>  templateUrl: './employee.component.html',
+>  styleUrls: ['./employee.component.css']
+>})
+>export class EmployeeComponent implements OnInit {
+>  selectDept : any = ["Development", "Testing", "Sales", "Support"]
+>  employeeDTO : EmployeeDTO
+>  empList:EmployeeDTO[] =[];
+>
+>  disableSubmit : boolean = false;
+>  disableUpdate : boolean = false;
+>  disableDelete : boolean = false;
+>  disableClear : boolean = false;
+>
+>
+>  constructor(private user:EmpserviceService) {
+>    this.employeeDTO = new EmployeeDTO();
+>   }
+>
+>  ngOnInit(): void {
+>    this.disableSubmit = false;
+>    this.disableClear = false;
+>    this.disableUpdate = true;
+>    this.disableDelete = true;
+>    this.getAllEmploye();
+>
+>  }
+>
+>  submit(){
+>    // console.log(this.empList.length);
+>    if (this.empList.length == 0)
+>    this.employeeDTO.id = this.employeeDTO.id + 1;
+>  else
+>    this.employeeDTO.id = this.empList.length + 1;
+>    this.postAllEmploye(this.employeeDTO);
+>    // console.log( this.postAllEmploye(this.employeeDTO));
+>    this.cancel();
+>    this.disableSubmit = false;
+>    this.disableClear = false;
+>    this.disableUpdate = true;
+>    this.disableDelete = true;
+>
+>  }
+>
+>  getAllEmploye(){
+>    this.user.getEmployee().subscribe(response=>{
+>      console.log(response);
+>      this.empList = response; 
+>    })
+>  }
+>
+>  postAllEmploye(employeeDTO : EmployeeDTO ){
+>    this.user.sendEmployee(employeeDTO).subscribe(result=>{
+>      
+>      this.empList= result;
+>      console.log(result)
+>    })
+>  }
+>
+>  deleteSelectedEmployee(id:number){
+>    this.user.deleteEmployees(id).subscribe(res=>{
+>      this.empList.splice(id -1,1);
+>    
+>    })
+>  }
+>
+>
+>  cancel(){
+>    this.employeeDTO = new EmployeeDTO();
+>  }
+>
+>  delete(id:number){
+>    this.deleteSelectedEmployee(id);
+>  }
+>
+>  editData(empdata:EmployeeDTO){
+>    this.employeeDTO = {...empdata}
+>    this.disableSubmit = true;
+>    this.disableClear = false;
+>    this.disableUpdate = false;
+>    this.disableDelete = false;
+>    
+>  }
+>
+>
+>  updateData(employeeDTO:EmployeeDTO){
+>    this.user.updateEmployees(employeeDTO).subscribe(data1=>{
+>      // console.log(data1)
+>    this.empList = data1
+>    })
+>    this.disableSubmit = false;
+>    this.disableClear = false;
+>    this.disableUpdate = true;
+>    this.disableDelete = true;
+>
+>    this.cancel();
+>    
+>  
+>  }
+>
+>  // editableFields(emp1:EmployeeDTO){
+>  //   this.editData(emp1);
+>  // }
+>
+>
+>
+>  
+> -->
+>}

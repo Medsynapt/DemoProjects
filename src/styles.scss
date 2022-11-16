@@ -1,0 +1,48 @@
+
+.p-datatable .p-datatable-thead > tr > th {
+    text-align: left;
+    padding: 0.5rem 1rem !important;
+    border: 1px solid #e9ecef;
+    border-width: 0 0 1px 0;
+    font-weight: 600;
+    color: #495057;
+    background: rgb(221, 198, 96) !important;
+    transition: box-shadow 0.2s;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    text-align: left;
+    border: 1px solid #e9ecef;
+    border-width: 0 0 1px 0;
+    padding: 0.5rem 1rem !important;
+}
+
+
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+    background: rgb(172, 161, 172)!important;
+    
+    color: #ffffff;
+}
+
+h5 {
+    display: block;
+    color: rgb(6, 2, 10);
+    font-size: 1.5rem !important;
+    text-align: center;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 700 !important;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    
+    
+}
+
+
+.container-fluid {
+    
+	background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(244,241,252,1) 0%, rgba(253,252,255,1) 100%);
+	  
+}

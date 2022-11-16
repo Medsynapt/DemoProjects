@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg">
+  <a class="demo1 navbar-brand " routerLink="/admin/resize">	<img src="\assets\logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ">
+
+      <li class=" nav-item " >
+        <a class="nav-link " routerLink="/employee" routerLinkActive="active" 
+        >Employee<span class="sr-only"></span></a>
+      </li> 
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="/admin/resize" routerLinkActive="active">Resize </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/dialog" routerLinkActive="active">Dialog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/demo" routerLinkActive="active">Demo</a>
+      </li>
+     
+      <li>
+
+        
+      <form  class="demo d-flex input-group w-auto">
+          <button class="btn btn-danger p-button-raised" routerLink="/login" type="submit">Logout</button>
+      </form>
+
+    </li>
+    
+
+   </ul>
+
+  
+  </div>
+</nav>
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+<div class="footer ">
+<h5 appFocus>WELCOME TO MEDSYNAPTIC</h5>
+</div>
+
+</div>
+
+
+
+
+          
+
+
+
+
+
+<!-- 
+<div class="container">
+    <div class="header">
+        <h2 appFocus>header</h2>
+       
+    <nav>
+
+      
+      <button  class="btn btn-primary" routerLink="/admin/demo">Demo</button><hr>
+      <button class="btn btn-info" routerLink="/admin/dialog">Dialog</button><hr>  
+      <button class="btn btn-success" routerLink="/admin/resize">Resize</button>
+      <hr>
+    </nav>
+    </div>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+      <h2 appFocus>footer</h2>
+    </div>
+  </div> -->
+
+  
+

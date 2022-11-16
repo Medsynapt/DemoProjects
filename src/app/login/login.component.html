@@ -1,0 +1,87 @@
+
+ <div class="container-fluid">
+
+	<div class="card">
+		<div class="card-image">	
+			<h2 class="card-heading">
+			<img src="\assets\logo.png">
+				<small>Login your Account</small>
+			</h2>
+		</div>
+		<form class="card-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+			
+			<div class="form-group">
+			   <div class="input">
+				<span class="error" *ngIf="loginUserName1.invalid && loginUserName1.touched ">Username field is not valid</span>
+                  <input type="text" class="input-field" required  minlength="3" maxlength="11" formControlName="loginUserName"
+                  [(ngModel)]="loginUserName" >
+         			<label class="input-label">Username</label>
+				
+
+			    </div>
+	     	</div>
+
+			 <div class="form-group">
+			<div class="input">
+				   <span class="error" *ngIf="password.invalid && password.touched">Password field is not valid</span>
+                   <input type="password" class="input-field" minlength="3" maxlength="10" formControlName="loginPassword" [(ngModel)]="loginPassword" required/>
+
+				   <label class="input-label">Password</label>
+				
+			</div>
+			 </div>
+
+
+			<div class="action">
+				<button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Get started</button>
+			</div>
+		</form>
+		<div class="card-info">
+			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-md-6 offset-md-3 mt-5">
+<div class="card">
+    <h4 class="card-header"> Login Form </h4>
+    <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+            <div class="form-group">
+                <label for="username">Username</label>
+                
+                <input type="text" class="form-control" required  formControlName="loginUserName"
+                 [(ngModel)]="loginUserName" >
+               
+            </div>
+                 
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control rounded-0" formControlName="loginPassword" [(ngModel)]="loginPassword" class="form-control">
+
+            </div>
+            <br>
+            <button class="btn btn-primary"   type="submit"> Login </button>
+
+        </form>
+    </div>
+
+</div> -->
+
+
+
+
+

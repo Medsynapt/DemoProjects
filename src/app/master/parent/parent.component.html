@@ -1,0 +1,21 @@
+<div class="Parent">
+    <h1>Parent Component</h1>
+
+    <hr/>
+    Enter a Value:
+    <input type="text" [(ngModel)]="myTextVal">
+
+    <br><br>
+
+    <button (class)="sendValue()">Child to parent </button>
+
+    value emitted from child to parent using @output :<strong>{{valueFromChild}}</strong>
+   
+    <app-child 
+    
+     [myInputVal]="myTextVal"
+     (myOutputVal)="valueEmitted($event)">
+ 
+    </app-child>
+
+</div>

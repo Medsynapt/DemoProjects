@@ -1,0 +1,299 @@
+<p-toast></p-toast>
+<p-contextMenu #cm [model]="item"></p-contextMenu>
+<div class="container-fluid">
+    <div class="row">
+     <div class="row mb-3"> 
+        <h5>Product Form</h5>
+        
+     </div>
+
+   
+<!-- <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
+    -->
+
+<div class="row mb-3">
+    <label for="id" class="col-sm-1 col-form-label" translate >Id</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="ID" pInputText id="id" [(ngModel)]="product.id" >
+    </div>
+</div> 
+
+<div class="row mb-3">
+    <label for="id" class="col-sm-1 col-form-label" translate>Code :</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" pInputText id="code"  placeholder="Code" [(ngModel)]="product.code">
+    </div>
+</div> 
+
+<div class="row mb-3">
+    <label for="id" class="col-sm-1 col-form-label">Name :</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" pInputText id="name" placeholder="Name" [(ngModel)]="product.name">
+    </div>
+</div> 
+
+<div class="row mb-3">
+    <label for="id" class="col-sm-1 col-form-label">Category:</label>
+    <div class="col-sm-6">
+        <input type="text"class="form-control" pInputText id="category" placeholder="Category" [(ngModel)]="product.category">
+    </div>
+</div> 
+
+<div class="row mb-3">
+    <label for="id" class="col-sm-1 col-form-label">Quantity:</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" pInputText id="quantity"  placeholder="Quantity"[(ngModel)]="product.quantity">
+    </div>
+</div>
+<br>
+
+   <div class="col-auto">
+     
+        <button type="submit" class="btn btn-outline-success m-2" [disabled]="saveProductButton"   (click)="submitData()">Submit</button>
+        <button type="reset"  class="btn btn-outline-primary m-2" [disabled]="updateProductButton" (click)="updateProduct(product)">Update</button>
+        <button type="reset"  class="btn btn-outline-danger m-2"  [disabled]="deleteProductButton" (click)="deleteProduct(product.id)">Delete</button>
+   
+    </div>
+ 
+<!-- </p-dialog> -->
+</div>
+
+</div>
+<br>
+
+<div class="container-fluid">
+    <!-- <div class="form-control">
+        
+      <input type="text" class="form-control" id="search" placeholder="search product" [(ngModel)]="nameSearch">
+  
+     </div>
+    -->
+  <div class="height">
+    <div >
+        <h5>Project Details</h5>
+     <div>
+  <p-table 
+ 
+     [columns]="scrollableCols" 
+     styleClass="p-datatable-gridlines"
+     [frozenColumns]="frozenCols"
+     [resizableColumns]="true"
+     [value]="products"
+     selectionMode="single"
+     [scrollable]="true" 
+     selectionMode="multiple"
+     scrollHeight="200px"
+     frozenWidth="300px"
+     [metaKeySelection]="true"
+     [(contextMenuSelection)]="selectedProduct1" 
+     [contextMenu]="cm"
+     [style]="{width:'900px'}"
+     columnResizeMode="expand"
+     >
+
+    <ng-template pTemplate="colgroup" let-columns>
+        <colgroup>                                     
+            <col *ngFor="let col of columns" style="width:300px">
+        </colgroup>
+    </ng-template>
+	
+	<ng-template pTemplate="header" let-columns>
+		<tr>
+			<th *ngFor="let col of columns" pResizableColumn
+             [pSortableColumn]="col.field">
+				{{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon >
+			</th>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body" let-product let-columns="columns" >
+		<tr [pSelectableRow]="product" [pContextMenuRow]="product">
+			<td *ngFor="let col of columns">
+				{{product[col.field]}}
+			</td>
+		</tr>
+	</ng-template>
+</p-table>
+</div>
+</div> 
+
+<!-- 
+<button pButton pRipple label="Close" class="p-button-rounded p-button-warning" (click)="selectProduct(product)"></button>
+        -->
+
+    <!-- <p-table [value]="products"
+        [resizableColumns]="true"
+        columnResizeMode="expand"
+        styleClass="p-datatable-gridlines" 
+        selectionMode="multiple"
+        [(selection)]="selectedProduct1"
+        dataKey="code"
+        (onRowSelect)="onRowSelect($event)"  
+        (onRowUnselect)="onRowUnselect($event)"  
+     
+      
+        >
+
+
+         <ng-template pTemplate="header" >
+          
+            <tr  >
+                 <th style="width:200px" pSortableColumn="name"    pFrozenColumn   pResizableColumn>Name      <p-sortIcon feild="id"></p-sortIcon></th>
+                 <th style="width:200px" pSortableColumn="id"      pResizableColumn>Id    <p-sortIcon feild="name"></p-sortIcon></th>
+                 <th style="width:200px" pSortableColumn="code"     pResizableColumn>Code     <p-sortIcon feild="id"></p-sortIcon></th>
+                 <th style="width:200px" pSortableColumn="category" pResizableColumn>Category <p-sortIcon feild="category"></p-sortIcon></th>
+                 <th style="width:200px" pSortableColumn="quantity" pResizableColumn>Quantity <p-sortIcon feild="quantity"></p-sortIcon></th>
+            </tr>
+
+        </ng-template>
+    
+      
+        <ng-template pTemplate="body" >
+            <tr [pSelectableRow]="product" *ngFor="let product of products | filter: nameSearch"> 
+                
+                <td style="width:200px" pFrozenColumn>{{product.name}}</td>
+                <td style="width:200px">{{product.id}}</td>
+                <td style="width:200px">{{product.code}}</td>
+               
+                <td style="width:200px">{{product.category}}</td>
+                <td style="width:200px">{{product.quantity}}</td>
+                <td >
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" 
+                    (click)="editProduct(product)"></button>
+                </td>
+               
+                
+            </tr>
+
+        </ng-template>
+
+    </p-table>  -->
+
+
+
+<!-- 
+<button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+(click)="openNew()" >New</button>
+
+
+<p-dialog [(visible)]="productDialog" [style]="{width: '450px'} " header="Prodct Details" [modal]="true"
+styleClass="p-fluid">
+
+<ng-template pTemplate="content">
+    <div class="p-feild">
+        <label>Name</label>
+        <input type="text" pInputText id="name" [(ngModel)]="product.name">
+
+    </div>
+
+</ng-template>
+
+</p-dialog>
+ -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="card">
+    <h5>Scrollable with width</h5>
+    <p-table [value]="customers" [scrollable]="true" scrollHeight="300px" [resizableColumns]="true"
+     styleClass="p-datatable-gridlines" >
+
+     <ng-template pTemplate="header"  >
+         <tr>
+             <th pSortableColumn="name" pResizableColumn style="width:15%; background-color: blueviolet; color: aliceblue;">Name <p-sortIcon feild="name"></p-sortIcon></th>
+             <th pSortableColumn="country" pResizableColumn style="width:15%; background-color: blueviolet; color: aliceblue;"> Country <p-sortIcon feild="country"></p-sortIcon></th>   
+             <th pSortableColumn="company" pResizableColumn style="width:15%; background-color: blueviolet; color: aliceblue;">Company <p-sortIcon feild="company"></p-sortIcon></th>
+             <th pSortableColumn="representative" pResizableColumn style="width:15%; background-color: blueviolet; color: aliceblue;">Reprentative <p-sortIcon feild="representative"></p-sortIcon></th>
+         </tr>
+
+     </ng-template>
+
+     <ng-template pTemplate="body" let-customer>
+        <tr >
+            <td  style="width:15%">{{customer.name}}</td>
+            <td  style="width:15%">{{customer.country.name}}</td>
+            <td  style="width:15%">{{customer.company}}</td>
+            <td  style="width:15%">{{customer.representative.name}}</td>
+        </tr>
+     </ng-template>
+
+    </p-table>
+
+</div> -->
+
+
+
+
+
+
+
+
+<!-- Expand Mode -->
+<!-- 
+ <div class="card">
+    <h5>Expand Mode</h5>
+
+    <p-table [value]="products" [resizableColumns]="true" columnResizeMode="expand" styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pResizableColumn>Id</th>
+                <th pResizableColumn>Code</th>
+                <th pResizableColumn>Name</th>
+                <th pResizableColumn>Category</th>
+                <th pResizableColumn>Quantity</th>
+            </tr>
+
+        </ng-template>
+
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.code}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.quantity}}</td>
+            </tr>
+
+        </ng-template>
+
+    </p-table>
+
+</div> -->
+ 
+<!-- 
+<div class="card">
+    <h5> Scrollable </h5>
+    <p-table [value]="customers" [scrollable]="true" scrollHeight="200px" [resizableColumns]="true"
+    styleClass="p-datatable-gridlines">
+      <ng-template pTemplate="header">
+           <tr>
+               <th pResizableColumn>Name</th>
+               <th pResizableColumn> Country</th>
+               <th pResizableColumn>Company</th>
+               <th pResizableColumn>Reprentative</th>
+           </tr>
+
+        </ng-template>
+
+       <ng-template pTemplate="body" let-customer>
+            <tr>
+                <td>{{customer.name}}</td>
+                <td>{{customer.country.name}}</td>
+                <td>{{customer.company}}</td>
+                <td>{{customer.representative.name}}</td>
+            </tr>
+
+       </ng-template>
+
+    </p-table>
+
+</div> -->
+
