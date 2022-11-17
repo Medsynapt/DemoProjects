@@ -28,7 +28,7 @@ show(){
        contentStyle: {'max-height':'500px', 'overflow':'auto'},
        baseZIndex: 10000
      });
-     
+
 
      this.ref.onClose.subscribe((employee : Employee) => {
        if(employee){
