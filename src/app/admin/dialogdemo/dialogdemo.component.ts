@@ -18,9 +18,7 @@ export class DialogdemoComponent implements OnDestroy {
 
   constructor(public dialogService: DialogService,public messageService :MessageService) { }
 
-  ref 
-  
-  : DynamicDialogRef;
+  ref  : DynamicDialogRef;
 
 show(){
 
@@ -30,6 +28,7 @@ show(){
        contentStyle: {'max-height':'500px', 'overflow':'auto'},
        baseZIndex: 10000
      });
+     
 
      this.ref.onClose.subscribe((employee : Employee) => {
        if(employee){
