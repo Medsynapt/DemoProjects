@@ -89,6 +89,8 @@
      [contextMenu]="cm"
      [style]="{width:'900px'}"
      columnResizeMode="expand"
+     (onRowSelect)="onRowSelect($event)" 
+     (onRowUnselect)="onRowUnselect($event)"
      >
 
     <ng-template pTemplate="colgroup" let-columns>

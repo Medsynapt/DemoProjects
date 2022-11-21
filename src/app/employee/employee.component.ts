@@ -148,7 +148,7 @@ export class EmployeeComponent implements OnInit, OnDestroy {
   onRowSelect(event) {
     // this.messageService.add({severity:'info', summary:'Employee Selected', life:1000,detail:event.data.name});
     //   console.log(event)
-  
+    console.log(event);
     this.employee = { ...event.data };
     this.saveDetails = true;
     this.updateDetails = false;
@@ -253,7 +253,7 @@ export class EmployeeComponent implements OnInit, OnDestroy {
 
     if (confirm('Are you sure??')) {
       
-  
+        
       this.sub.push(this.employeeService.deleteEmployee(id).subscribe((data) => {
       
     

@@ -98,7 +98,7 @@ export class ResizeComponent implements OnInit {
                   {
                      label:'Delete',
                      icon:'pi pi-fw pi-bookmark',
-                     command:() => this.deleteProduct(this.selectedProduct1)
+                     command:() => this.deleteProduct(this.product.id)
                   },
                   {
                      label:'edit',
@@ -125,23 +125,27 @@ export class ResizeComponent implements OnInit {
       // }
 
 
-
-
   submitData(){
   
     if (this.products.length === 0){
-      this.product.id = this.product.id+1
+      this.product.id = this.product.id+1;
     }
   
     else{
-      this.product.id = this.products.length+1;
+      this.product.id = this.products.length+1;  
+    }
+
+    if(this.validateProduct){
       this.saveProduct(this.product);
-      this.saveProductButton=false;
-      this.updateProductButton= true;
+      
+      this.clearData();
+      this.saveProductButton = false;
+      this.updateProductButton = true;
       this.deleteProductButton = true;
+
     }
   }
-  
+
 
   selectProduct( product :Product){
 
@@ -152,16 +156,20 @@ export class ResizeComponent implements OnInit {
 
   onRowSelect(event){
 
-    this.messageService.add({severity:'info', summary:'Product Selected', life:1000,detail:event.data.name});
     console.log(event);
-    this.product=event.data;
+    this.product = { ...event.data };
+    this.saveProductButton = true;
+    this.updateProductButton = false;
+    this.deleteProductButton = false;
   
   }
 
   onRowUnselect(event){
-    this.messageService.add({severity:'info', summary: 'Product Unselected', life:1000, detail:event.data.name});
     console.log(event);
-    console.log(this.selectedProduct1);
+   
+    this.saveProductButton = false;
+    this.updateProductButton = true;
+    this.deleteProductButton = true;
    
     
   }
@@ -173,61 +181,109 @@ export class ResizeComponent implements OnInit {
 
  }
 
- editProduct(selectedProduct1 :Product){
-    this.product ={...selectedProduct1};
-     
-      this.saveProductButton=true;
-      this.updateProductButton=false;
-      this.deleteProductButton = false;
-  
-  
- }
-
  updateProduct(product : Product){
-    
-  this.products = this.dynamicService.addProduct(product)
+     // this.products.push(this.product);
+     if (!this.validateProduct()) 
+     {
+       return false;
+            
+     }
+      this.products = this.dynamicService.addProduct(product)
       this.saveProductButton=true;
       this.updateProductButton=false;
       this.deleteProductButton = false;
   
-
  }
-
-
- 
 
  saveProduct(product : Product){
-  //  this.submitted= true;
-     // this.products.push(this.product);
-   this.messageService.add({severity:'success', summary: 'Successful', detail: this.product.name, life: 1000});
+  this.submitted= true;
+  this.products.push(this.product);
+  this.messageService.add({severity:'success', summary: 'Successful', detail: this.product.name, life: 1000});
   
-
-   this.products = this.dynamicService.addProduct(product)
-  
-  
+  // this.products = this.dynamicService.addProduct(product)
+ 
  }
 
+ clearData(){
 
-
- clearData(selectedProduct1){
-
-  this.product = {...selectedProduct1};
-   
+  this.product = new Product()
+  this.saveProductButton = false;
+  this.updateProductButton = true;
+  this.deleteProductButton = true;
 }
 
-deleteProduct(element)
+deleteProduct(id)
 {
- this.messageService.add({severity:'success', summary: 'Successful', detail: this.product.name, life: 1000});
+    
+     this.products.forEach((value, index)=>{ 
+  
+       if( value== id){
+       
+        this.products.splice(index, 1)
+        }
 
-  this.products.forEach((value,index)=>{
-     if(value==element){
-       this.products.splice(index,1)
-     }
    });
-
- 
+   
+   this.saveProductButton    = false;
+   this.updateProductButton  = true;
+   this.deleteProductButton  = true;
  
 }
+
+
+// onDelete(element: UserInformation) {
+
+//   this.posts.forEach((value, index) => {
+//     if (value == element) {
+//       this.posts.splice(index, 1)
+
+//     }
+//   });
+// }
+
+
+
+validateProduct() 
+{
+  if (!this.product.name.trim())
+   {
+    alert("Please enter name");  
+    return false;
+   }
+   else
+
+    this.product.name = this.product.name.trim();
+
+   if (this.product.name.length <= 1) 
+   {
+    alert("Name should be between 2 to 15 characters")
+    return false;
+   }
+
+   if (!this.product.code) {
+    alert("please enter address")
+    return false;
+   }
+   if (this.product.code.length <= 2)
+   {
+    alert("Address should be between 4 to 15 characters")
+    return false;
+   }
+
+   if (!this.product.description) 
+   {
+    alert("please enter address")
+    return false;
+   }
+   if (this.product.description.length <= 2 ) 
+   {
+    alert("Department Name should be between 3 to 15 characters")
+    return false;
+   }
+     
+   return true;
+}
+
 
 
 
