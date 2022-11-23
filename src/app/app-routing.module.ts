@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
 import { AppRoutingConstants, DemoModuleConstant, RoutingModulesConstatnt } from './constant';
 import { DateTimeComponent } from './date-time/date-time.component';
 import { AuthGuard } from './employee/auth/auth.guard';
 import { EmployeeComponent } from './employee/employee.component';
+import { ExtraComponent } from './extra/extra.component';
 import { LayoutComponent } from './layout/layout.component';
 
 
@@ -21,7 +23,12 @@ const routes: Routes = [
           {
                 path:'date',component:DateTimeComponent
           } ,
-          
+          {
+                path:'extra',component:ExtraComponent
+          },
+          {
+                path:'async', component: AsyncAwiatComponent
+          },
           
           {
             path:'',

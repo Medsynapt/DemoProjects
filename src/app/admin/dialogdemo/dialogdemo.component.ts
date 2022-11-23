@@ -14,20 +14,22 @@ import { ResizeComponent } from '../resize/resize.component';
   templateUrl: './dialogdemo.component.html',
   styleUrls: ['./dialogdemo.component.scss']
 })
+
 export class DialogdemoComponent implements OnDestroy {
 
   constructor(public dialogService: DialogService,public messageService :MessageService) { }
 
   ref  : DynamicDialogRef;
 
-show(){
+ show(){
 
      this.ref =this.dialogService.open(EmployeeComponent, {
        header:'choose a product',
        width: '80%',
        contentStyle: {'max-height':'500px', 'overflow':'auto'},
        baseZIndex: 10000
-     });
+    
+      });
 
 
      this.ref.onClose.subscribe((employee : Employee) => {
@@ -37,13 +39,12 @@ show(){
      })
 }
 
+  open()
+  {
 
-
-open()
-{
-  this.ref = this.dialogService.open(Dynamic1Component ,{
-    
-    header :'Choose a Customer',
+     this.ref = this.dialogService.open(ResizeComponent ,{
+     
+     header :'Choose a Customer',
      width :'80%',
      contentStyle: {'max-height': '500px', 'overflow':'auto'},
      baseZIndex:2000
@@ -51,20 +52,20 @@ open()
   });
 
   this.ref.onClose.subscribe(( product :Product) =>{
-    if(product){
+ 
+      if(product){
       this.messageService.add({severity:'info',summary:"customer selected",detail: product.name})
+   
     }
-  }
-  );
+  });
   
 }
 
-
-
 ngOnDestroy(): void {
-  if(this.ref){
+   
+    if(this.ref){
     this.ref.close();
   }
-}
+ }
 
 } 

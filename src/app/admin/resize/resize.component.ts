@@ -182,16 +182,18 @@ export class ResizeComponent implements OnInit {
  }
 
  updateProduct(product : Product){
-     // this.products.push(this.product);
+    
      if (!this.validateProduct()) 
      {
        return false;
             
      }
-      this.products = this.dynamicService.addProduct(product)
+      this.products.push(this.product);
+      //this.products = this.dynamicService.addProduct(product)
       this.saveProductButton=true;
-      this.updateProductButton=false;
+      this.updateProductButton=true;
       this.deleteProductButton = false;
+      this.clearData();
   
  }
 
@@ -203,7 +205,7 @@ export class ResizeComponent implements OnInit {
   // this.products = this.dynamicService.addProduct(product)
  
  }
-
+  
  clearData(){
 
   this.product = new Product()
@@ -229,19 +231,6 @@ deleteProduct(id)
    this.deleteProductButton  = true;
  
 }
-
-
-// onDelete(element: UserInformation) {
-
-//   this.posts.forEach((value, index) => {
-//     if (value == element) {
-//       this.posts.splice(index, 1)
-
-//     }
-//   });
-// }
-
-
 
 validateProduct() 
 {

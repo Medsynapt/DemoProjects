@@ -100,7 +100,7 @@
     </ng-template>
 	
 	<ng-template pTemplate="header" let-columns>
-		<tr>
+		<tr>    
 			<th *ngFor="let col of columns" pResizableColumn
              [pSortableColumn]="col.field">
 				{{col.header}}

@@ -45,6 +45,7 @@ import { DateTimeComponent } from './date-time/date-time.component';
 import {CalendarModule} from 'primeng/calendar';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
 
 
 
@@ -52,7 +53,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   declarations: [
     AppComponent,
     ExtraComponent,
-    LoginComponent,EmployeeComponent, DemoModuleComponent, DateTimeComponent,
+    LoginComponent,EmployeeComponent, DemoModuleComponent, DateTimeComponent, AsyncAwiatComponent,
     
    
   

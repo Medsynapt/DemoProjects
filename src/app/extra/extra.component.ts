@@ -1,6 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { rejects } from 'assert';
+import { resolve } from 'dns';
 import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { promise } from 'protractor';
+import { delay } from 'rxjs/operators';
 import { ResizeComponent } from '../admin/resize/resize.component';
 
 import { Product } from '../product';
@@ -13,13 +18,19 @@ import { Product } from '../product';
 })
 export class ExtraComponent implements OnInit {
 
-  constructor( public messageService: MessageService, public dialogService : DialogService) { }
+
+  constructor( public messageService: MessageService, public dialogService : DialogService,
+    private httpClient:HttpClient) { }
 
 
   ref : DynamicDialogRef;
 
   ngOnInit(): void {
+
   }
+
+
+  
 
 add(){
 

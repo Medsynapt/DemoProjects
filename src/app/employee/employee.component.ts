@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem, MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
+
 import { EmployeeService } from '../admin/service/employee.service';
 import { Employee } from '../employee';
 
@@ -30,8 +31,9 @@ export class EmployeeComponent implements OnInit, OnDestroy {
   currentRecord: any;
   selectedEmployeeArray: Employee[];
 
+
   constructor(private employeeService: EmployeeService, public messageService: MessageService,
-                  private translateService: TranslateService)
+                 private translateService: TranslateService)
    {
           this.employee = new Employee();
          
@@ -132,6 +134,9 @@ export class EmployeeComponent implements OnInit, OnDestroy {
 
   // Context menu code end
 
+
+
+  
 
   ngOnDestroy() {
     {
