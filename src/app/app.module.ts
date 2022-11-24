@@ -47,6 +47,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
 import { AppService } from './admin/service/app.service';
+import { BehaviourSubjectComponent } from './Subject/behaviour-subject/behaviour-subject.component';
 
 
 
@@ -58,7 +59,8 @@ import { AppService } from './admin/service/app.service';
     EmployeeComponent, 
     DemoModuleComponent, 
     DateTimeComponent,
-    AsyncAwiatComponent
+    AsyncAwiatComponent,
+    BehaviourSubjectComponent
     
    
   

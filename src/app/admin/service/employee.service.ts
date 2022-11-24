@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Employee } from 'src/app/employee';
 
 @Injectable({
@@ -11,11 +11,28 @@ export class EmployeeService {
 
   public serverPath="http://localhost:9292/api/Employee";
  
-   userName= new Subject <any> ();
+  
+  userName= new Subject <any> ();
+
+
+
+  userAddSubject: BehaviorSubject<string> = new BehaviorSubject<string>('vishal');
+
+  public notifySubject = new Subject<string>();
+
+
+
 
   constructor( private http: HttpClient) { }
 
+  sendNotification(data){
 
+     this.notifySubject.next(data);
+  }
+
+  setUser(data){
+     this.userAddSubject.next(data);
+  }
   
  getEmployee() {
    

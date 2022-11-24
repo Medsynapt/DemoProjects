@@ -68,10 +68,11 @@ export class AsyncAwiatComponent implements OnInit {
           console.log(response);
 
             resolve(true);
-          }, (error) => {
+          }, 
+          (error) => {
             reject(error)
-          })
-        })
+          });
+        });
       }
   
       

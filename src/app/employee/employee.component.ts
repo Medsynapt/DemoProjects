@@ -32,26 +32,25 @@ export class EmployeeComponent implements OnInit, OnDestroy {
   selectedEmployeeArray: Employee[];
 
 
-  userName : string;
-
-
   constructor(private employeeService: EmployeeService, public messageService: MessageService,
                  private translateService: TranslateService)
    {
           this.employee = new Employee();
-
-          this.employeeService.userName.subscribe( res => 
-            {
-              
-              this.userName =res ;
-            })
          
    }
-   onChange(uname){
-    console.log(uname.value);
-    this.employeeService.userName.next(uname.value);
+
+
+  //  onChange(data){
+  //   this.employeeService.sendNotification(data.value);
+  //  }
    
-   }
+
+
+  //  onChange(uname){
+  //   console.log(uname.value);
+  //   this.employeeService.userName.next(uname.value);
+   
+  //  }
 
   ngOnInit(): void {
 

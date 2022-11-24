@@ -7,6 +7,8 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { promise } from 'protractor';
 import { delay } from 'rxjs/operators';
 import { ResizeComponent } from '../admin/resize/resize.component';
+import { EmployeeService } from '../admin/service/employee.service';
+import { Employee } from '../employee';
 
 import { Product } from '../product';
 
@@ -18,14 +20,29 @@ import { Product } from '../product';
 })
 export class ExtraComponent implements OnInit {
 
+  message :string;
 
-  constructor( public messageService: MessageService, public dialogService : DialogService,
-    private httpClient:HttpClient) { }
+  beahviorSubject :string;
+
+  constructor( public messageService: MessageService, public dialogService : DialogService, 
+    private employeeService: EmployeeService) { }
 
 
   ref : DynamicDialogRef;
 
   ngOnInit(): void {
+
+    this.employeeService.notifySubject.subscribe(res =>
+      {
+          this.message = res;
+      });
+
+
+    this.employeeService.userAddSubject.subscribe(res1 =>{
+
+      this.beahviorSubject = res1;
+    })
+    
 
   }
 

@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 
 import { LoginComponent } from './login/login.component';
+import { BehaviourSubjectComponent } from './Subject/behaviour-subject/behaviour-subject.component';
 import { Comp2Component } from './Subject/comp2/comp2.component';
 
 
@@ -21,16 +22,7 @@ const routes: Routes = [
           {
                 path:AppRoutingConstants.loginPage,component:LoginComponent 
           },   
-          {
-                path:'date',component:DateTimeComponent
-          } ,
-          {
-                path:'extra',component:ExtraComponent
-          },
-          {
-                path:'async', component: AsyncAwiatComponent
-          },
-    
+        
           
           {
             path:'',
@@ -40,7 +32,23 @@ const routes: Routes = [
               {
                 path : 'employee', component:EmployeeComponent
               } ,
-        
+            
+              {
+                path:'date',component:DateTimeComponent
+              } ,
+
+              {
+                path:'extra',component:ExtraComponent
+              },
+
+              {
+                path:'async', component: AsyncAwiatComponent
+              },
+              
+              {
+                path:'subject', component: BehaviourSubjectComponent
+              },
+    
     
 
               {

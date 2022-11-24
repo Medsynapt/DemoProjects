@@ -1,0 +1,30 @@
+<p>behaviour-subject works!</p>
+
+<div class="row">
+    <div class="col-sm-12">
+      <div class="row mb-4"> 
+        <app-extra></app-extra>
+      </div>
+    </div>
+  </div>
+  
+    <div class="card">
+      <div class="card-header">
+        Behavioral Subject
+      </div>
+      <div class="card-body">
+        <input class="form-control mb-2"#uname>
+        <button class="btn btn-primary" (click)="onChange(uname)">Change</button>
+        <br>
+
+     </div>
+
+    <div class="card-body">
+        <input class="form-control mb-2"#user>
+        <button class="btn btn-danger" (click)="onUser(user)">Change</button>
+        <br>
+
+    </div>
+
+
+</div>
