@@ -8,6 +8,7 @@ import { Dynamic1Component } from '../dynamic1/dynamic1.component';
 
 
 import { ResizeComponent } from '../resize/resize.component';
+import { AppService } from '../service/app.service';
 
 @Component({
   selector: 'app-dialogdemo',
@@ -15,27 +16,54 @@ import { ResizeComponent } from '../resize/resize.component';
   styleUrls: ['./dialogdemo.component.scss']
 })
 
-export class DialogdemoComponent implements OnDestroy {
+export class DialogdemoComponent implements OnInit ,OnDestroy {
 
-  constructor(public dialogService: DialogService,public messageService :MessageService) { }
+  username= 'Vishal';
+
+  constructor(public dialogService: DialogService,public messageService :MessageService, 
+    private appService: AppService) {
+
+        this.appService.exclusive.next(true);
+       
+        this.appService.username.subscribe(res => {
+
+        this.username= res;
+      })
+    }
 
   ref  : DynamicDialogRef;
 
- show(){
 
-     this.ref =this.dialogService.open(EmployeeComponent, {
-       header:'choose a product',
+  ngOnInit(): void {
+
+        //this.appService.exclusive.next(true)
+
+  }
+  
+ngOnDestroy(): void {
+
+  this.appService.exclusive.next(false)
+   if(this.ref){
+   this.ref.close();
+ }
+}
+
+ show(){
+ 
+       this.ref =this.dialogService.open(EmployeeComponent, {
+    
+       header:'choose a Employee',
        width: '80%',
        contentStyle: {'max-height':'500px', 'overflow':'auto'},
        baseZIndex: 10000
     
-      });
+   });
 
 
      this.ref.onClose.subscribe((employee : Employee) => {
-       if(employee){
-         this.messageService.add({severity:'info',summary:'Employeee Added',detail:employee.name,life:500});
-       }
+        if(employee){
+            this.messageService.add({severity:'info',summary:'Employeee Added',detail:employee.name,life:500});
+          }
      })
 }
 
@@ -61,11 +89,5 @@ export class DialogdemoComponent implements OnDestroy {
   
 }
 
-ngOnDestroy(): void {
-   
-    if(this.ref){
-    this.ref.close();
-  }
- }
 
 } 

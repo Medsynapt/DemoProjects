@@ -17,6 +17,9 @@ import { LayoutModule } from '../layout/layout.module';
 import { CustomPipe } from '../employee/custome pipe/cutome.pipe';
 import { FilterPipe } from '../employee/custome pipe/filter.pipe';
 import {ContextMenuModule} from 'primeng/contextmenu';
+import { Comp1Component } from '../Subject/comp1/comp1.component';
+import { Comp2Component } from '../Subject/comp2/comp2.component';
+import { Comp3Component } from '../Subject/comp3/comp3.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {ContextMenuModule} from 'primeng/contextmenu';
     DialogdemoComponent,
     Dynamic1Component,
     CustomPipe,
-    FilterPipe
+    FilterPipe,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component
  
   ],
   imports: [

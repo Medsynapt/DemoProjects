@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { rejects } from 'assert';
+import { resolve } from 'dns';
+import { promise } from 'protractor';
 import { delay } from 'rxjs/operators';
+import { EmployeeService } from '../admin/service/employee.service';
 
 @Component({
   selector: 'app-async-awiat',
@@ -15,7 +19,7 @@ export class AsyncAwiatComponent implements OnInit {
   public response;
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private employeeService : EmployeeService) { }
 
 
   async fetchData() {
@@ -30,6 +34,46 @@ export class AsyncAwiatComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.getEmployee();
   }
 
+  getEmployee(){
+
+   
+
+    this.employeeService.getEmployee().subscribe(data =>{
+
+      console.log(data);
+    })
+
+  }
+
+  async getEmployee1(){
+
+    let resolve = await this.employeeService.getEmployee().subscribe(data1 =>
+      {  
+  
+      console.log(data1) 
+      },
+    
+      )};
+
+
+
+   getEmpl() {
+        return new Promise(async (resolve, reject) => {
+          
+         await this.employeeService.getEmployee().subscribe(response => {
+          console.log(response);
+
+            resolve(true);
+          }, (error) => {
+            reject(error)
+          })
+        })
+      }
+  
+      
 }
+

@@ -46,6 +46,7 @@ import {CalendarModule} from 'primeng/calendar';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
+import { AppService } from './admin/service/app.service';
 
 
 
@@ -53,7 +54,11 @@ import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
   declarations: [
     AppComponent,
     ExtraComponent,
-    LoginComponent,EmployeeComponent, DemoModuleComponent, DateTimeComponent, AsyncAwiatComponent,
+    LoginComponent,
+    EmployeeComponent, 
+    DemoModuleComponent, 
+    DateTimeComponent,
+    AsyncAwiatComponent
     
    
   
@@ -104,7 +109,7 @@ import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
 
 
   providers: [EmployeeService,DynamicService,CustomerService,MessageService,DynamicDialogRef,
-    DialogService,ConfirmationService, AuthGuardService, CustomerService,
+    DialogService,ConfirmationService, AuthGuardService, CustomerService,AppService,
         
     {
       provide: HTTP_INTERCEPTORS,

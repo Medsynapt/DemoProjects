@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../admin/service/app.service';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  exclusive: boolean ;
+
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+
+    this.appService.exclusive.subscribe(res =>
+      {
+        this.exclusive= res;
+      })
   }
 
 }

@@ -1,9 +1,41 @@
 <p-toast></p-toast>
 
-<button type="button" (click)="show()" pButton icon="pi pi-info-circle" label="Show"></button>
+<div class="card">
+    <div class="card-header">
+        <h5>Show Dialog With Employee Component</h5> 
+    </div>
+    <div class="card-body">
+        <button type="button" (click)="show()" pButton icon="pi pi-info-circle" label="Show"></button>
+    </div>
+  </div>
 
-<br>
-<br>
+  <div class="card">
+    <div class="card-header">
+      <h5>Open Dialog</h5> 
+    </div>
+    <div class="card-body">
+   
+        <button type="button" (click)="open()" pButton icon="pi pi-plus" label="Open"></button>
+    </div>
+  </div>
 
-<button type="button" (click)="open()" pButton icon="pi pi-plus" label="Open"></button>
 
+
+<div class="my-3">
+    <h2> Username is <span class="text-primary">{{username}}</span></h2>
+
+    <hr>
+    <div class="row"> 
+         <div class="col-md-4">
+           <app-comp1></app-comp1>
+         </div>
+
+         <div class="col-md-4">
+            <app-comp2></app-comp2>
+         </div>
+
+         <div class="col-md-4">
+            <app-comp3></app-comp3>
+         </div>
+    </div>
+</div>
