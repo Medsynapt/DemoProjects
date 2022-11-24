@@ -8,7 +8,7 @@ import { AppService } from 'src/app/admin/service/app.service';
 })
 export class Comp3Component implements OnInit {
 
-  userName: string ='Vishal'
+  userName: string ;
 
   constructor( private appService: AppService) { 
 

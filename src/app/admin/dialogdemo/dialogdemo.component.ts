@@ -18,7 +18,7 @@ import { AppService } from '../service/app.service';
 
 export class DialogdemoComponent implements OnInit ,OnDestroy {
 
-  username= 'Vishal';
+  username;
 
   constructor(public dialogService: DialogService,public messageService :MessageService, 
     private appService: AppService) {

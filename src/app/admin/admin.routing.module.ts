@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { Comp2Component } from "../Subject/comp2/comp2.component";
 
 import { DialogdemoComponent } from "./dialogdemo/dialogdemo.component";
 import { Dynamic1Component } from "./dynamic1/dynamic1.component";

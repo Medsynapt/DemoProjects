@@ -8,7 +8,7 @@ import { AppService } from 'src/app/admin/service/app.service';
 })
 export class Comp2Component implements OnInit {
 
-  userName: string ='Vishal'
+  userName: string;
 
   constructor( private appService: AppService) { 
 
@@ -17,10 +17,10 @@ export class Comp2Component implements OnInit {
       )
   }
 
-  onChange(uname){
-    console.log(uname.value)
-    this.appService.username.next(uname.value);
-  }
+  // onChange(uname){
+  //   console.log(uname.value)
+  //   this.appService.username.next(uname.value);
+  // }
   ngOnInit(): void {
   }
 

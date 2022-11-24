@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 
 import { LoginComponent } from './login/login.component';
+import { Comp2Component } from './Subject/comp2/comp2.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
           {
                 path:'async', component: AsyncAwiatComponent
           },
+    
           
           {
             path:'',

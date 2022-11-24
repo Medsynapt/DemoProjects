@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Employee } from 'src/app/employee';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class EmployeeService {
 
   public serverPath="http://localhost:9292/api/Employee";
  
- 
+   userName= new Subject <any> ();
 
   constructor( private http: HttpClient) { }
 

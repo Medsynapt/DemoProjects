@@ -9,13 +9,13 @@ import { AppService } from 'src/app/admin/service/app.service';
 export class Comp1Component implements OnInit {
 
 
-  userName: string ='Vishal'
+  userName: string ;
 
   constructor( private appService: AppService) { 
 
-    this.appService.username.subscribe(res =>
-      this.userName= res 
-      )
+    // this.appService.username.subscribe(res =>
+    //   this.userName= res 
+    //   )
   }
 
   onChange(uname){

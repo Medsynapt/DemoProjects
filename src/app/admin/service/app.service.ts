@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   
@@ -10,8 +10,11 @@ export class AppService {
 
   exclusive = new Subject<boolean>();
 
-  username  = new Subject<string>();
+ // username  = new Subject<string>();
+ 
+ username = new  BehaviorSubject('Vishal');
 
+ 
   constructor() { }
 
 }

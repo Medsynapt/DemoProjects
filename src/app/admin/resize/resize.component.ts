@@ -6,6 +6,7 @@ import { CustomerService } from 'src/app/customer.service';
 import { DynamicService } from 'src/app/dynamic.service';
 import { Product } from 'src/app/product';
 import { TranslateService } from '@ngx-translate/core';
+import { EmployeeService } from '../service/employee.service';
 
 
 @Component({
@@ -49,14 +50,19 @@ export class ResizeComponent implements OnInit {
   item: MenuItem[];
 
 
+  userName:String;
+
+
 
 
   constructor( public resizeService: DynamicService ,public customerService: CustomerService, public dynamicService : DynamicService
      , public messageService: MessageService , public ref : DynamicDialogRef,public confirmationService: ConfirmationService,
-     private translateService : TranslateService) {
+     private translateService : TranslateService, private employeeService: EmployeeService) {
     
+     this.employeeService.userName.next();
+      
     
-     
+
    }
    
 
