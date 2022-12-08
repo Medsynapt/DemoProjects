@@ -48,6 +48,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AsyncAwiatComponent } from './async-awiat/async-awiat.component';
 import { AppService } from './admin/service/app.service';
 import { BehaviourSubjectComponent } from './Subject/behaviour-subject/behaviour-subject.component';
+import { DemoHtmlComponent } from './demo-html/demo-html.component';
+import { EncryptDecryptComponent } from './encrypt-decrypt/encrypt-decrypt.component';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 
@@ -60,7 +64,9 @@ import { BehaviourSubjectComponent } from './Subject/behaviour-subject/behaviour
     DemoModuleComponent, 
     DateTimeComponent,
     AsyncAwiatComponent,
-    BehaviourSubjectComponent
+    BehaviourSubjectComponent,
+    DemoHtmlComponent,
+    EncryptDecryptComponent
     
    
   
@@ -88,6 +94,9 @@ import { BehaviourSubjectComponent } from './Subject/behaviour-subject/behaviour
 		MultiSelectModule,
 		ContextMenuModule,
     ProgressBarModule,
+    OverlayPanelModule,
+    CheckboxModule,
+    
 
     TranslateModule.forRoot({
       loader:{

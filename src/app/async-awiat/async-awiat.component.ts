@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { rejects } from 'assert';
-import { resolve } from 'dns';
-import { promise } from 'protractor';
+
 import { delay } from 'rxjs/operators';
 import { EmployeeService } from '../admin/service/employee.service';
 
@@ -19,7 +18,11 @@ export class AsyncAwiatComponent implements OnInit {
   public response;
 
 
-  constructor(private httpClient: HttpClient, private employeeService : EmployeeService) { }
+  constructor(private httpClient: HttpClient, private employeeService : EmployeeService) { 
+        
+   
+
+  }
 
 
   async fetchData() {
@@ -33,14 +36,16 @@ export class AsyncAwiatComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+  async ngOnInit() {
 
     this.getEmployee();
+     //await this.getEmpl();
+     console.log("message");
+     //this.response;
+
   }
 
-  getEmployee(){
-
-   
+  getEmployee(){   
 
     this.employeeService.getEmployee().subscribe(data =>{
 
@@ -51,30 +56,36 @@ export class AsyncAwiatComponent implements OnInit {
 
   async getEmployee1(){
 
-    let resolve = await this.employeeService.getEmployee().subscribe(data1 =>
+     await this.employeeService.getEmployee().subscribe(data1 =>
       {  
-  
+       
+     
       console.log(data1) 
       },
     
-      )};
+  )};
 
-
-
-   getEmpl() {
-        return new Promise(async (resolve, reject) => {
-          
-         await this.employeeService.getEmployee().subscribe(response => {
-          console.log(response);
-
-            resolve(true);
-          }, 
-          (error) => {
-            reject(error)
-          });
-        });
-      }
   
-      
-}
+   getEmpl() {
+
+    return new Promise(async (resolve, reject) => {
+      //    console.log('await')
+       this.response= this.employeeService.getEmployee().subscribe(res => {
+
+        this.response = res;
+         console.log(res);
+
+        resolve(true);
+        console.log('await1');
+      },
+        (error) => {
+          reject(error);
+        });
+        });
+      }  
+
+    
+
+    
+    }
 

@@ -11,19 +11,27 @@ export class EmployeeService {
 
   public serverPath="http://localhost:9292/api/Employee";
  
+
+
+  /// Subject and BehaviorSubject starts
+  
   
   userName= new Subject <any> ();
-
-
 
   userAddSubject: BehaviorSubject<string> = new BehaviorSubject<string>('vishal');
 
   public notifySubject = new Subject<string>();
 
+  public demoSubject = new Subject<string>();
 
+
+  /// Subject and BehaviorSubject end
 
 
   constructor( private http: HttpClient) { }
+
+  
+  /// Subject and BehaviorSubject starts
 
   sendNotification(data){
 
@@ -31,10 +39,19 @@ export class EmployeeService {
   }
 
   setUser(data){
+
      this.userAddSubject.next(data);
   }
+
+  demoDataSubject(data){
+    this.demoSubject.next(data);
+  }
   
- getEmployee() {
+  /// Subject and BehaviorSubject ends
+
+
+
+  getEmployee() {
    
     return this.http.get<Employee>(this.serverPath + '/GetEmployee');
   

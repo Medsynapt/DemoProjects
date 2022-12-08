@@ -24,6 +24,8 @@ export class ExtraComponent implements OnInit {
 
   beahviorSubject :string;
 
+  demoSubject:string;
+
   constructor( public messageService: MessageService, public dialogService : DialogService, 
     private employeeService: EmployeeService) { }
 
@@ -41,7 +43,12 @@ export class ExtraComponent implements OnInit {
     this.employeeService.userAddSubject.subscribe(res1 =>{
 
       this.beahviorSubject = res1;
-    })
+    });
+
+    this.employeeService.demoSubject.subscribe(res =>{
+
+      this.demoSubject =res ;
+    });
     
 
   }

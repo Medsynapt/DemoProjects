@@ -1,0 +1,28 @@
+ <p>encrypt-decrypt works!</p>
+
+
+<hr> <hr>
+Encryption <br> <br>
+
+<input type="text" placeholder="data to encrypt" [(ngModel)]="request"><br> <br>
+<button type="button" class="btn btn-warning m-2 mt-2"   value="Encrypt" (click)="encryptData()">Encrypt</button>
+<span>
+    Encrypted Text: {{encrypted}}
+</span>
+ 
+<hr><hr>
+Decryption <br><br>
+<input class="input" type="text" placeholder="data to decrypt" [(ngModel)]="response"><br><br>
+<button type="button" class="btn btn-danger  m-2 mt-2" (click)="decryptData()">Decrypt</button>&nbsp;
+
+<p>
+
+  
+  Decrypted Text:<br> {{decrypted}}
+
+
+</p> 
+
+
+
+

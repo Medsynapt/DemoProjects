@@ -14,15 +14,28 @@
       </div>
       <div class="card-body">
         <input class="form-control mb-2"#uname>
-        <button class="btn btn-primary" (click)="onChange(uname)">Change</button>
+        <button class="btn btn-primary" (click)="onChange(uname)"> Subject</button>
         <br>
 
      </div>
 
     <div class="card-body">
         <input class="form-control mb-2"#user>
-        <button class="btn btn-danger" (click)="onUser(user)">Change</button>
+        <button class="btn btn-danger" (click)="onUser(user)">Behavioral Subject</button>
         <br>
+
+    </div>
+
+    <div class="card-body">
+      <input class="form-control mb-2" #demo>
+      <button class="btn btn-secondary" (click)="onSubject(demo)">DemoSubject</button>
+
+    </div>
+
+    <div class="card">
+      <div class="card-header" #box>
+        <h1> User name is <span class="text-sucess">{{UserName}}</span></h1>
+      </div>
 
     </div>
 

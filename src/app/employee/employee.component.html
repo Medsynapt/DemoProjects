@@ -67,13 +67,41 @@
    </div>
 
    <div class="form-group mb-3">
+      
         <button class="btn btn-outline-success m-2 mt-2"  (click)="submitData()"   [disabled]="saveDetails">Submit</button>
         <button class="btn btn-outline-primary m-2 mt-2"  [disabled]="updateDetails" (click)="updateEmployee(employee)" >Update</button>
         <button class="btn btn-outline-danger m-2 mt-2"   [disabled]="deleteDetails" (click)="deleteEmployee(employee.id)" translate>global.btnDelete</button>
         <button class="btn btn-warning m-2 mt-2"          (click)="clearData()">Clear</button>
+       
+        <button class="btn btn-success m-2 mt-2"   (click)="id.toggle($event)" >Advanced Search</button>
+   
+        <p-overlayPanel #id [showCloseIcon]="false" [appendTo]="'body'" [style]="{width: '500px', height: '120px'}">
+           
+            <ng-template pTemplate>
+                <h6>Advanced Search</h6>
+                           
+                    <input type="text" class="col-sm-5" [(ngModel)]="overlayModel" placeholder="search">  
+                
+                    <input class="form-check-input m-2 mt-3" type="checkbox" value="Default" >
+                    <label class="form-check-label ">  Default </label>
+    
+                    <button class="btn btn-outline-success m-2 mt-2"  (click)="addOverlayPanel(id)" >Add</button>
+                    <button class="btn btn-outline-primary m-2 mt-2"  (click)="addOverlayPanel(id)" >Update</button>
       
+        
+                
+            </ng-template>
+    
+        </p-overlayPanel>
+         
    </div>
 
+   <!-- <p-button class="btn m-2 mt-2"  [label]="selectedEmployee ? selectedEmployee.name : 'Advanced Search'" icon="pi pi-search" (click)="id.toggle($event)"></p-button> -->
+    
+   
+
+    <!-- <p-button [label]="advancedsearch"></p-button> -->
+   
 
 </div>
    
