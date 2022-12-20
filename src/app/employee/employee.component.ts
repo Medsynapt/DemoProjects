@@ -157,12 +157,15 @@ export class EmployeeComponent implements OnInit, OnDestroy {
 
   onRowSelect(event) {
     // this.messageService.add({severity:'info', summary:'Employee Selected', life:1000,detail:event.data.name});
+     debugger 
      
     this.employee = { ...event.data };
     this.saveDetails = true;
     this.updateDetails = false;
     this.deleteDetails = false;
     console.log(event);
+
+    
 
   }
 

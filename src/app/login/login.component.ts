@@ -98,8 +98,8 @@ get password(){
         }
         else{
           this.router.navigate(['/','employee']);
-    
         }
+    
         
       },
       error =>{
