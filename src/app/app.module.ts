@@ -52,9 +52,12 @@ import { DemoHtmlComponent } from './demo-html/demo-html.component';
 import { EncryptDecryptComponent } from './encrypt-decrypt/encrypt-decrypt.component';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import {CheckboxModule} from 'primeng/checkbox';
+import { ImageUploadComponent } from './employee/file upload/image-upload/image-upload.component';
+import { PdfFileComponent } from './employee/file upload/pdf-file/pdf-file.component';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+// import { PdfViewerModule } from 'ng2-pdf-viewer';
 
-
-
+import { QRCodeModule } from 'angularx-qrcode';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +69,9 @@ import {CheckboxModule} from 'primeng/checkbox';
     AsyncAwiatComponent,
     BehaviourSubjectComponent,
     DemoHtmlComponent,
-    EncryptDecryptComponent
+    EncryptDecryptComponent,
+    ImageUploadComponent,
+    PdfFileComponent,
     
    
   
@@ -96,6 +101,9 @@ import {CheckboxModule} from 'primeng/checkbox';
     ProgressBarModule,
     OverlayPanelModule,
     CheckboxModule,
+    NgxQRCodeModule,
+    QRCodeModule,
+    // PdfViewerModule,
     
 
     TranslateModule.forRoot({

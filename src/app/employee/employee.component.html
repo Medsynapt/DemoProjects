@@ -11,31 +11,27 @@
   </div>
    -->
 <div class="container">
-<!--    
+    <!--    
     <div class="card">
         <div class="card-header">
         employee
         </div>
         <div class="card-body"> -->
-          <!-- <h5 class="card-title">Username is <span class="text-primary"> {{userName}}</span></h5> -->
-          <!-- <input class="form-control mb-2" #uname>
+    <!-- <h5 class="card-title">Username is <span class="text-primary"> {{userName}}</span></h5> -->
+    <!-- <input class="form-control mb-2" #uname>
            <button class="btn btn-primary" (click)="onChange(uname)">Change</button>
         </div>
       </div> -->
 
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row mb-4">
+                <h5>Employee Data</h5>
+            </div>
 
-
-
-   
-  <div class="row">
-   <div class="col-sm-12">
-     <div class="row mb-4"> 
-        <h5>Employee Data</h5>
-     </div>
-   
-<!-- <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
+            <!-- <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
     -->
-<!-- 
+            <!-- 
 <div class="row mb-3">
     <label for="id" class="col-sm-1 col-form-label">ID :</label>
     <div class="col-sm-6">
@@ -45,67 +41,78 @@
 
 
 
-  <div class="row mb-4">
-    <label for="name1" class="col-sm-2 col-form-label" translate>global.name</label>
-    <div class="col-sm-5">
-        <input type="text" class="form-control" pInputText id="name" placeholder="Name" [(ngModel)]="employee.name">
+            <div class="row mb-4">
+                <label for="name1" class="col-sm-2 col-form-label" translate>global.name</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" pInputText id="name" placeholder="Name"
+                        [(ngModel)]="employee.name">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <label for="address" class="col-sm-2 col-form-label" translate>global.Address</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" pInputText id="address" placeholder="Address"
+                        [(ngModel)]="employee.address">
+                </div>
+            </div>
+            <div class=" row mb-5">
+                <label for="deptName" class="col-sm-2 col-form-label" translate>global.DepartmentName</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" pInputText id="deptName" placeholder="Department name"
+                        [(ngModel)]="employee.deptName">
+                </div>
+            </div>
+            <div class="form-group mb-3">
+
+                <button class="btn btn-outline-success m-2 mt-2" (click)="submitData()"
+                    [disabled]="saveDetails">Submit</button>
+                <button class="btn btn-outline-primary m-2 mt-2" [disabled]="updateDetails"
+                    (click)="updateEmployee(employee)">Update</button>
+                <button class="btn btn-outline-danger m-2 mt-2" [disabled]="deleteDetails"
+                    (click)="deleteEmployee(employee.id)" translate>global.btnDelete</button>
+                <button class="btn btn-warning m-2 mt-2" (click)="clearData()">Clear</button>
+
+                <button class="btn btn-success m-2 mt-2" (click)="id.toggle($event)">Advanced Search</button>
+
+                <p-overlayPanel #id [showCloseIcon]="false" [appendTo]="'body'"
+                    [style]="{width: '500px', height: '120px'}">
+
+                    <ng-template pTemplate>
+                        <h6>Advanced Search</h6>
+                        <input type="text" class="col-sm-5" [(ngModel)]="overlayModel" placeholder="search">
+                        <input class="form-check-input m-2 mt-3" type="checkbox" value="Default">
+                        <label class="form-check-label "> Default </label>
+                        <button class="btn btn-outline-success m-2 mt-2" (click)="addOverlayPanel(id)">Add</button>
+                        <button class="btn btn-outline-primary m-2 mt-2" (click)="addOverlayPanel(id)">Update</button>
+                    </ng-template>
+                </p-overlayPanel>
+            </div>
+
+            <!-- <p-button class="btn m-2 mt-2"  [label]="selectedEmployee ? selectedEmployee.name : 'Advanced Search'" icon="pi pi-search" (click)="id.toggle($event)"></p-button> -->
+
+            <!-- <p-button [label]="advancedsearch"></p-button> -->
+
+        </div>
+
     </div>
-   </div> 
+    <div class=row>
 
-   <div class="row mb-4">
-    <label for="address" class="col-sm-2 col-form-label" translate>global.Address</label>
-    <div class="col-sm-5">
-        <input type="text" class="form-control" pInputText id="address" placeholder="Address" [(ngModel)]="employee.address">
+        <qrcode [qrdata]='qrdata' [allowEmptyString]="false" [cssClass]="'center'" [size]="256" [colorDark]="'#1c100b'"
+            [colorLight]="'#dbe2da'" [elementType]="'svg'" [errorCorrectionLevel]="'H'" [margin]="4" [scale]="1"
+            [title]="'A custom title attribute'" [width]="100">
+        </qrcode>
+        <br>
+
+        <div class="text">
+            <label>
+                Type to change: <input [(ngModel)]="qrdata" placeholder="name">
+            </label>
+            <br>
+            <br>
+            <!-- <button (click)="onChangeEmpl('')">Change Value</button>  -->
+
+        </div>
     </div>
-   </div> 
-
-   <div class=" row mb-5">
-    <label for="deptName" class="col-sm-2 col-form-label" translate >global.DepartmentName</label>
-    <div class="col-sm-5">      
-        <input type="text" class="form-control"    pInputText id="deptName" placeholder="Department name" [(ngModel)]="employee.deptName">
-    </div>
-   </div>
-
-   <div class="form-group mb-3">
-      
-        <button class="btn btn-outline-success m-2 mt-2"  (click)="submitData()"   [disabled]="saveDetails">Submit</button>
-        <button class="btn btn-outline-primary m-2 mt-2"  [disabled]="updateDetails" (click)="updateEmployee(employee)" >Update</button>
-        <button class="btn btn-outline-danger m-2 mt-2"   [disabled]="deleteDetails" (click)="deleteEmployee(employee.id)" translate>global.btnDelete</button>
-        <button class="btn btn-warning m-2 mt-2"          (click)="clearData()">Clear</button>
-       
-        <button class="btn btn-success m-2 mt-2"   (click)="id.toggle($event)" >Advanced Search</button>
-   
-        <p-overlayPanel #id [showCloseIcon]="false" [appendTo]="'body'" [style]="{width: '500px', height: '120px'}">
-           
-            <ng-template pTemplate>
-                <h6>Advanced Search</h6>
-                           
-                    <input type="text" class="col-sm-5" [(ngModel)]="overlayModel" placeholder="search">  
-                
-                    <input class="form-check-input m-2 mt-3" type="checkbox" value="Default" >
-                    <label class="form-check-label ">  Default </label>
-    
-                    <button class="btn btn-outline-success m-2 mt-2"  (click)="addOverlayPanel(id)" >Add</button>
-                    <button class="btn btn-outline-primary m-2 mt-2"  (click)="addOverlayPanel(id)" >Update</button>
-      
-        
-                
-            </ng-template>
-    
-        </p-overlayPanel>
-         
-   </div>
-
-   <!-- <p-button class="btn m-2 mt-2"  [label]="selectedEmployee ? selectedEmployee.name : 'Advanced Search'" icon="pi pi-search" (click)="id.toggle($event)"></p-button> -->
-    
-   
-
-    <!-- <p-button [label]="advancedsearch"></p-button> -->
-   
-
-</div>
-   
-</div>
 </div>
 <br>
 <!-- Table creation -->
@@ -113,67 +120,45 @@
 
 <div class="container-fluid">
     <div class="height">
-       
-    <div class="row mb-4">
-    
-        <h5>Employee Details 3</h5>
-    <div>
-      
-        
-        <p-table 
-        
-        [columns]="scrollableCols" 
-        [frozenColumns]="frozenCols"
-        [resizableColumns]="true"
-        selectionMode="single"
-        [value]="employees"
-        [scrollable]="true" 
-        selectionMode="multiple"
-        styleClass="p-datatable-sm"
-        scrollHeight="200px"
-        frozenWidth="300px"
-        (onRowSelect)="onRowSelect($event)" 
-        (onRowUnselect)="onRowUnselect($event)"
-        [(selection)]="selectedEmployee"   
-        styleClass="p-datatable-gridlines" 
-        [metaKeySelection]="true" 
-        [(contextMenuSelection)]="selectedEmployee" 
-        [contextMenu]="cm"
-        [style]="{width:'900px'}"
-        columnResizeMode="expand"
-      
-        >
-   
-        <ng-template pTemplate="colgroup" let-columns>
-            <colgroup>
-                <col *ngFor="let col of columns" style="width:380px">
-            </colgroup>
-        </ng-template>
-       
-        <ng-template pTemplate="header" let-columns>
-            <tr>
-                <th *ngFor="let col of columns" pResizableColumn
-                 [pSortableColumn]="col.field" >
-                 <span translate>{{col.header}}</span>
-                    <!-- {{col.header | translate}} -->
-                    <p-sortIcon [field]="col.field"></p-sortIcon>
-                </th>
-            </tr>
-        </ng-template>
-       
-       <ng-template pTemplate="body" let-employee let-columns="columns ">
-           <tr [pSelectableRow]="employee " [pContextMenuRow]="employee" (mouseup)="mouseClick($event)">
-               <td *ngFor="let col of columns ">
-                   {{employee[col.field] }}
-               </td>
-           </tr>
-       </ng-template>
-   </p-table>
-   </div>
-  
-</div>
+        <div class="row mb-4">
+            <h5>Employee Details 3</h5>
+            <p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [resizableColumns]="true"
+                [value]="employees" [scrollable]="true" selectionMode="multiple"
+                styleClass="p-datatable-sm" scrollHeight="200px" frozenWidth="600px" (onRowSelect)="onRowSelect($event)"
+                (onRowUnselect)="onRowUnselect($event)" [(selection)]="selectedEmployee"
+                styleClass="p-datatable-gridlines" [metaKeySelection]="true" [(contextMenuSelection)]="selectedEmployee"
+                [contextMenu]="cm" columnResizeMode="fit">
 
-    
+                <ng-template pTemplate="colgroup" let-columns>
+                    <colgroup>
+                        <col *ngFor="let col of columns" style="width:380px">
+                    </colgroup>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.field">
+                            <span translate>{{col.header}}</span>
+                            <!-- {{col.header | translate}} -->
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-employee let-columns="columns ">
+                    <tr [pSelectableRow]="employee " [pContextMenuRow]="employee" (mouseup)="mouseClick($event)">
+                        <td *ngFor="let col of columns ">
+                            {{employee[col.field] }}
+                        </td>
+                    </tr>
+                </ng-template>
+                <!-- <ng-template pTemplate="body" let-emp   >
+        <tr [pSelectableRow]="emp"> 
+            <td style="width:400px"  >{{emp.name}}</td>
+            <td style="width:400px" >{{emp.address}}</td>
+            <td style="width:400px" >{{emp.deptName}}</td>     
+        </tr>
+    </ng-template>    -->
+            </p-table>
+        </div>
         <!-- <p-table [value]="employees" 
              [resizableColumns]="true" 
              columnResizeMode="expand"   
@@ -185,26 +170,20 @@
              [(selection)]="selectedEmployee" 
              [scrollable]="true" 
              scrollHeight="300px">
-          
         
-             <ng-template pTemplate="header" >
-              
+             <ng-template pTemplate="header" > 
                 <tr  >
                      <th  style="width:400px"  pSortableColumn="name"         pResizableColumn>Name <p-sortIcon feild="name"></p-sortIcon></th>
                      <th  style="width:200px"  pSortableColumn="address"      pResizableColumn>Address <p-sortIcon feild="address"></p-sortIcon></th>
                      <th  style="width:200px"  pSortableColumn="deptName"      pResizableColumn>Department Name <p-sortIcon feild="deptName"></p-sortIcon></th>
                 </tr>
-    
-            </ng-template>
-            
+            </ng-template>   
 
             <ng-template pTemplate="body" let-emp   >
                 <tr [pSelectableRow]="emp"> 
                     <td style="width:400px"  >{{emp.name}}</td>
                     <td style="width:400px" >{{emp.address}}</td>
-                    <td style="width:400px" >{{emp.deptName}}</td>
-                   
+                    <td style="width:400px" >{{emp.deptName}}</td>            
                 </tr>
             </ng-template>   
         </p-table> -->
- 

@@ -2,56 +2,49 @@
 
 <div class="card">
     <h5>Single selection</h5>
-    <p-table [value]="products" 
-             selectionMode="single"
-             [(selection)]="selectedProduct1"
-             datakey="code"
-             scrollDirection="both"
-             [scrollable]="true"
-             scrollHeight="400px"
-             styleClass="p-mt-3"
-             
-             >
+    <p-table [value]="products" selectionMode="single" [(selection)]="selectedProduct1" datakey="code"
+        scrollDirection="both" [scrollable]="true" scrollHeight="400px" styleClass="p-mt-3">
 
 
-    <ng-template pTemplate="header" >
-        <tr>
-            <th style="width:200px" pFrozenColumn>Id</th>
-            <th style="width:200px">Code</th>
-            <th style="width:200px">Name</th>
-            <th style="width:200px">Description</th>
-            <th style="width:200px">Price</th>
-            <th style="width:200px">Category</th>
-            <th style="width:200px">Quantity</th>
-            <th style="width:200px">Inventory Stock</th>
-            <th style="width:200px">Rating</th>
-        </tr>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:200px" pFrozenColumn>Id</th>
+                <th style="width:200px">Code</th>
+                <th style="width:200px">Name</th>
+                <th style="width:200px">Description</th>
+                <th style="width:200px">Price</th>
+                <th style="width:200px">Category</th>
+                <th style="width:200px">Quantity</th>
+                <th style="width:200px">Inventory Stock</th>
+                <th style="width:200px">Rating</th>
+            </tr>
 
-    </ng-template>
+        </ng-template>
 
-     <ng-template pTemplate="body" let-product>
-         <tr>
-             <td style="width:200px" pFrozenColumn>{{product.id}}</td>
-             <td style="width:200px"> {{product.code}}</td>
-             <td style="width:200px">{{product.name}}</td>
-             <td style="width:200px">{{product.description}}</td>
-             <td style="width:200px">{{product.price}}</td>
-             <td style="width:200px">{{product.category}}</td>
-             <td style="width:200px">{{product.quantity}}</td>
-             <td style="width:200px">{{product.inventoryStatus}}</td>
-             <td style="width:200px">{{product.rating}}</td>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td style="width:200px" pFrozenColumn>{{product.id}}</td>
+                <td style="width:200px"> {{product.code}}</td>
+                <td style="width:200px">{{product.name}}</td>
+                <td style="width:200px">{{product.description}}</td>
+                <td style="width:200px">{{product.price}}</td>
+                <td style="width:200px">{{product.category}}</td>
+                <td style="width:200px">{{product.quantity}}</td>
+                <td style="width:200px">{{product.inventoryStatus}}</td>
+                <td style="width:200px">{{product.rating}}</td>
 
-         </tr>
+            </tr>
 
-     </ng-template>
+        </ng-template>
 
-</p-table>
+    </p-table>
 </div>
 
 <div class="card">
     <h5>Multiple selection</h5>
 
-    <p-table [value]="products" selectionMode='multiple' [(selection)]="selectedProduct1" [metaKeySelection]="false" dataKey="code">
+    <p-table [value]="products" selectionMode='multiple' [(selection)]="selectedProduct1" [metaKeySelection]="false"
+        dataKey="code">
         <ng-template pTemplate="header">
             <tr>
                 <th>Id</th>
@@ -92,43 +85,41 @@
 <div class="card">
     <h5>Event</h5>
 
-    <p-table [value]="products" styleClass="p-datatable-gridlines" selectionMode="multiple" [(selection)]="selectedProduct2" dataKey="code"
-     (onRowSelect)="onRowSelect($event)"  (onRowUnselect)="onRowUnselect($event)">
+    <p-table [value]="products" styleClass="p-datatable-gridlines" selectionMode="multiple" [metaKeySelection]="true"
+        [(selection)]="selectedProduct2" dataKey="code" (onRowSelect)="onRowSelect($event)"
+        (onRowUnselect)="onRowUnselect($event)">
 
-     <ng-template pTemplate="header">
-         <tr>
-            <th>Id</th>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>Inventory Stock</th>
-            <th>Rating</th>
-         </tr>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Inventory Stock</th>
+                <th>Rating</th>
+            </tr>
 
-     </ng-template >
+        </ng-template>
 
-     <ng-template  pTemplate="body" let-product>
-         <tr [pSelectableRow]="product">
-             
-            <td>{{product.id}}</td>
-            <td>{{product.code}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.category}}</td>
-            <td>{{product.quantity}}</td>
-            <td>{{product.inventoryStatus}}</td>
-            <td>{{product.rating}}</td>
-         </tr>
-
-     </ng-template>
-
+        <ng-template pTemplate="body" let-product>
+            <tr [pSelectableRow]="product">
+                <td>{{product.id}}</td>
+                <td>{{product.code}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.inventoryStatus}}</td>
+                <td>{{product.rating}}</td>
+            </tr>
+        </ng-template>
     </p-table>
 
- 
+
 </div>
 
 
@@ -210,7 +201,7 @@
 
 <div class="card">
     <h5>Single Column</h5>
-    
+
     <p-table [value]="products">
         <ng-template pTemplate="header">
 
@@ -222,7 +213,8 @@
                 <th pSortableColumn="price">Price<p-sortIcon feild="price"></p-sortIcon></th>
                 <th pSortableColumn="category">Category<p-sortIcon feild="category"></p-sortIcon></th>
                 <th pSortableColumn="quantity">Quantity<p-sortIcon feild="quantity"></p-sortIcon></th>
-                <th pSortableColumn="inventoryStatus">Inventory Status <p-sortIcon feild="inventoryStatus"></p-sortIcon></th>
+                <th pSortableColumn="inventoryStatus">Inventory Status <p-sortIcon feild="inventoryStatus"></p-sortIcon>
+                </th>
                 <th pSortableColumn="rating">Rating <p-sortIcon feild="rating"></p-sortIcon></th>
             </tr>
 
@@ -248,9 +240,10 @@
 
 
     </p-table>
-    <button pButton pRipple label="Close" class="p-button-rounded p-button-warning" (click)="selectedProd(product)"></button>
-    
-</div> 
+    <button pButton pRipple label="Close" class="p-button-rounded p-button-warning"
+        (click)="selectedProd(product)"></button>
+
+</div>
 
 
 <!-- 

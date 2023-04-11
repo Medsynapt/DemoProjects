@@ -1,14 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { rejects } from 'assert';
-import { resolve } from 'dns';
+
 import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { promise } from 'protractor';
-import { delay } from 'rxjs/operators';
+
 import { ResizeComponent } from '../admin/resize/resize.component';
 import { EmployeeService } from '../admin/service/employee.service';
-import { Employee } from '../employee';
+
 
 import { Product } from '../product';
 

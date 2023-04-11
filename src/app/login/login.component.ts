@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit,OnDestroy {
   public loginForm: FormGroup;
   disbaleLoginButton: boolean = false;
   submitted = false;
-  loginUserName: '';
-  loginPassword :'';
+  UserName: '';
+  Password :'';
   employee: any;
   user='1';
   
@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
  
      localStorage.setItem('SessionUser',this.user);
-
 
     this.loginForm = new FormGroup({
 
@@ -72,8 +71,8 @@ get password(){
   }
 
   clearData(){
-     this.loginUserName='';
-     this.loginPassword='';
+     this.UserName='';
+     this.Password='';
   }
 
 
@@ -85,7 +84,7 @@ get password(){
 
   this.disbaleLoginButton = true;
   
-  this.subs.push(this.loginService.validateUser(this.loginUserName,this.loginPassword).subscribe(
+  this.subs.push(this.loginService.validateUser(this.UserName,this.Password).subscribe(
       loginModel => {
 
         if(!loginModel){

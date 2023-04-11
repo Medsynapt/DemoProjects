@@ -1,0 +1,7 @@
+<p>pdf-file works!</p>
+
+<div class="container-fluid">
+	<input class="btn btn-warning" (change)="onFileSelected()" type="file" id="file">&nbsp;
+    <button type="button" [disabled]="!pdfSrc" (click)="download(true)" class="btn btn-primary">Download</button> &nbsp;
+        <button type="button" [disabled]="!pdfSrc" (click)="print()" class="btn btn-primary">Print PDF</button>
+</div><br><br>

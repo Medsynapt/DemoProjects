@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Dynamic1Component } from './dynamic1.component';
+import { PdfFileComponent } from './pdf-file.component';
 
-describe('Dynamic1Component', () => {
-  let component: Dynamic1Component;
-  let fixture: ComponentFixture<Dynamic1Component>;
+describe('PdfFileComponent', () => {
+  let component: PdfFileComponent;
+  let fixture: ComponentFixture<PdfFileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Dynamic1Component ]
+      declarations: [ PdfFileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Dynamic1Component);
+    fixture = TestBed.createComponent(PdfFileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

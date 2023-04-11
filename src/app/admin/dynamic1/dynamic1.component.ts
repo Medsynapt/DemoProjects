@@ -29,8 +29,8 @@ export class Dynamic1Component implements OnInit {
   ngOnInit(): void {
   
            this.dynamicService.getProducts().then (data => this.products= data);
-           this.dynamicService.getProducts().then (data => this.products2=data);
-           this.dynamicService.getProducts().then (data =>this.product3 =data );
+          //  this.dynamicService.getProducts().then (data => this.products2=data);
+          //  this.dynamicService.getProducts().then (data =>this.product3 =data );
   
   }
 
@@ -43,7 +43,7 @@ export class Dynamic1Component implements OnInit {
 onRowSelect(event){
 
   this.messageService.add({severity:'info' , summary:'Product selected' , detail:event.data.name});
-  console.log(event);
+ // console.log(event);
   console.log(this.selectedProduct2)
 }
 

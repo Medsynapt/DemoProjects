@@ -22,6 +22,9 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "ng2-pdf-viewer"
+            ],
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -29,7 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
-             "node_modules/primeicons/primeicons.css",
+              "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -129,6 +132,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DemoProjects"
+    }
+  },
+  "defaultProject": "DemoProjects",
+  "cli": {
+    "analytics": "7f3a06dc-aa86-420c-b424-4a80937b8cf3"
+  }
 }
