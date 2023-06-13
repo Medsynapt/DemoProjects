@@ -63,18 +63,21 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     this.saveDetails = false;
     this.updateDetails = true;
     this.deleteDetails = true;
+    
 
     // Frozen Column code starts
 
     this.frozenCols = [
+     
       {
+        
         field: 'name', header: this.translateService.instant('global.name'), width: 200
       }
     ],
 
 
       this.scrollableCols = [
-
+        { field: 'id', header: this.translateService.instant('global.id'), width: 100 },
         { field: 'address', header: this.translateService.instant('global.Address'), width: 200 },
         { field: 'deptName', header: this.translateService.instant('global.DepartmentName'), width: 200 },
 
@@ -236,7 +239,6 @@ export class EmployeeComponent implements OnInit, OnDestroy {
 
   // Update Employee code end
 
-
   // Clear Data code start
 
   clearData() {
@@ -250,9 +252,10 @@ export class EmployeeComponent implements OnInit, OnDestroy {
   // Clear Data code end 
 
   // Delete Employee code start
-
+    
+ 
   deleteEmployee(id) {
-
+   
     if (confirm('Are you sure??')) {
 
       this.sub.push(this.employeeService.deleteEmployee(id).subscribe((data) => {

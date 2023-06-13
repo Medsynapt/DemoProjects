@@ -1,6 +1,6 @@
 {
     "global":{
-    
+        "id":"Id",
         "name": "Full Name :",
         "Address":"Address Detail :",
         "DepartmentName":"Department Detail :",

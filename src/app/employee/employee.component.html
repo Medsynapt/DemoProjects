@@ -124,10 +124,12 @@
             <h5>Employee Details 3</h5>
             <p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [resizableColumns]="true"
                 [value]="employees" [scrollable]="true" selectionMode="multiple"
-                styleClass="p-datatable-sm" scrollHeight="200px" frozenWidth="600px" (onRowSelect)="onRowSelect($event)"
+                styleClass="p-datatable-sm" scrollHeight="400px" frozenWidth="400px" (onRowSelect)="onRowSelect($event)"
                 (onRowUnselect)="onRowUnselect($event)" [(selection)]="selectedEmployee"
-                styleClass="p-datatable-gridlines" [metaKeySelection]="true" [(contextMenuSelection)]="selectedEmployee"
-                [contextMenu]="cm" columnResizeMode="fit">
+                styleClass="p-datatable-gridlines" [metaKeySelection]="true" 
+                [(contextMenuSelection)]="selectedEmployee"
+                [contextMenu]="cm"
+                 columnResizeMode="fit">
 
                 <ng-template pTemplate="colgroup" let-columns>
                     <colgroup>
